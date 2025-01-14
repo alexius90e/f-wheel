@@ -6,14 +6,14 @@ const WheelOfFortune = () => {
   const [result, setResult] = useState(null);
 
   const items = [
-    { id: 0, text: 'booster 30 minutes', color: '#420103' },
-    { id: 1, text: '10 COINS', color: '#C42930' },
-    { id: 2, text: 'booster 30 minutes', color: '#420103' },
-    { id: 3, text: '20 COINS', color: '#C42930' },
-    { id: 4, text: 'booster 30 minutes', color: '#420103' },
-    { id: 5, text: '30 COINS', color: '#C42930' },
-    { id: 6, text: '+2 spins', color: '#681fbf' },
-    { id: 7, text: '10 COINS', color: '#C42930' },
+    { id: 0, text: 'booster 30 minutes', color: '#420103', icon: 'booster.svg' },
+    { id: 1, text: '10 COINS', color: '#C42930', icon: 'coin10.svg' },
+    { id: 2, text: 'booster 30 minutes', color: '#420103', icon: 'booster.svg' },
+    { id: 3, text: '20 COINS', color: '#C42930', icon: 'coin20.svg' },
+    { id: 4, text: 'booster 30 minutes', color: '#420103', icon: 'booster.svg' },
+    { id: 5, text: '30 COINS', color: '#C42930', icon: 'coin30.svg' },
+    { id: 6, text: '+2 spins', color: '#681fbf', icon: 'extraspin.svg' },
+    { id: 7, text: '10 COINS', color: '#C42930', icon: 'coin10.svg' },
   ];
 
   const stepDegree = 360 / items.length;
@@ -58,7 +58,13 @@ const WheelOfFortune = () => {
               >
                 <div className='wheel-of-fortune__wheel-item-info'>
                   <div className='wheel-of-fortune__wheel-item-info-text'>{item.text}</div>
-                  <img className='wheel-of-fortune__wheel-item-info-icon' src='' alt='' />
+                  <figure className='wheel-of-fortune__wheel-item-info-icon'>
+                    <img
+                      className='wheel-of-fortune__wheel-item-info-icon-image'
+                      src={`/public/wheel-icons/${item.icon}`}
+                      alt='icon'
+                    />
+                  </figure>
                 </div>
 
                 <svg
